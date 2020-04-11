@@ -12,7 +12,7 @@ const pokemonDB = require("./models/pokemon.js");
 //=============================
 // Required Middleware Engine
 //=============================
-// app.set("view engine", "jsx");
+app.set("view engine", "jsx");
 app.engine("jsx", require("express-react-views").createEngine());
 
 //=============================
@@ -25,12 +25,14 @@ app.get("/", (req, res) => {
 
 //List of pokemon
 app.get("/pokemon", (req, res) => {
-  res.render("index.jsx", {
+  res.render("Index.jsx", {
     pokemon: pokemonDB,
   });
 });
 app.get("/pokemon/:id", (req, res) => {
-  res.send(req.params.id);
+  res.render("Show.jsx", {
+    pokemon: pokemonDB[req.params.id],
+  });
 });
 
 //=============================

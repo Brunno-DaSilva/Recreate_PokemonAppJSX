@@ -7,12 +7,12 @@ const headerContainer = {
   justifyContent: "space-around",
   alignItems: "center",
   width: "100vw",
-  minHeight: "50vh",
+  minHeight: "58vh",
   padding: "1rem",
   margin: "-1rem",
   backgroundColor: "#01BAEF",
   fontSize: "3rem",
-  color: "#0B4F6C",
+  color: "#e2e4e4",
   letterSpacing: "0.5rem",
 };
 
@@ -34,6 +34,7 @@ const headerNavigationItems = {
 const headerNavigationItemsP = {
   fontSize: "2rem",
   color: "#FBFBFF",
+  textDecoration: "none",
 };
 
 const bodyContainer = {
@@ -75,6 +76,15 @@ const bodyContainerCardH3 = {
   fontSize: "1.2rem",
 };
 
+const bodyContainerCardA = {
+  color: "#0B4F6C",
+  marginBottom: "0.5rem",
+  textTransform: "capitalize",
+  letterSpacing: "0.2rem",
+  fontSize: "1.2rem",
+  textDecoration: "none",
+};
+
 class ListOfPokemons extends React.Component {
   render() {
     return (
@@ -86,7 +96,14 @@ class ListOfPokemons extends React.Component {
           </div>
           <div style={headerNavigation}>
             <div style={headerNavigationItems}>
-              <p style={headerNavigationItemsP}>Home</p>
+              <p style={headerNavigationItemsP}>
+                <a
+                  style={headerNavigationItemsP}
+                  href="http://localhost:3000/pokemon/"
+                >
+                  Home
+                </a>
+              </p>
               <span></span>
             </div>
             <div style={headerNavigationItems}>
@@ -103,11 +120,16 @@ class ListOfPokemons extends React.Component {
 
         <div style={bodyContainer}>
           <div style={bodyContainer}>
-            {this.props.pokemon.map((data) => (
+            {this.props.pokemon.map((data, index) => (
               <div style={bodyContainerCard}>
                 <div style={bodyContainerCardH3}>
                   <h3>{data.name}</h3>
                 </div>
+                <p>
+                  <a style={bodyContainerCardA} href={`pokemon/${data[index]}`}>
+                    Details
+                  </a>
+                </p>
                 <img
                   style={bodyContainerCardImg}
                   src={data.img}
