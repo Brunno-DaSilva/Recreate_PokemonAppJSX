@@ -25,7 +25,9 @@ app.get("/", (req, res) => {
 
 //List of pokemon
 app.get("/pokemon", (req, res) => {
-  res.send(pokemonDB);
+  res.render("index.jsx", {
+    pokemon: pokemonDB,
+  });
 });
 
 //=============================
