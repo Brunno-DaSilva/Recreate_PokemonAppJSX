@@ -29,6 +29,9 @@ app.get("/pokemon", (req, res) => {
     pokemon: pokemonDB,
   });
 });
+app.get("/pokemon/:id", (req, res) => {
+  res.send(req.params.id);
+});
 
 //=============================
 // Listening on Port 3000
