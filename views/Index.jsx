@@ -87,6 +87,18 @@ const bodyContainerCardA = {
 
 class ListOfPokemons extends React.Component {
   render() {
+    const pkData = this.props.pokemon;
+
+    const indexOfPokemons = () => {
+      for (let i = 0; i < pkData.length; i++) {
+        return (
+          <a style={bodyContainerCardA} href={`pokemon/${i}`}>
+            {pkData[i].name}
+          </a>
+        );
+      }
+    };
+
     return (
       <div>
         {/* Header - Starts Here - */}
@@ -99,7 +111,7 @@ class ListOfPokemons extends React.Component {
               <p style={headerNavigationItemsP}>
                 <a
                   style={headerNavigationItemsP}
-                  href="http://localhost:3000/pokemon/"
+                  href="http://localhost:3000/pokemon"
                 >
                   Home
                 </a>
@@ -125,11 +137,8 @@ class ListOfPokemons extends React.Component {
                 <div style={bodyContainerCardH3}>
                   <h3>{data.name}</h3>
                 </div>
-                <p>
-                  <a style={bodyContainerCardA} href={`pokemon/${data[index]}`}>
-                    Details
-                  </a>
-                </p>
+                <p></p>
+                <div>{indexOfPokemons()}</div>
                 <img
                   style={bodyContainerCardImg}
                   src={data.img}

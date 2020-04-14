@@ -103,7 +103,7 @@ class PokemonsShow extends React.Component {
               <p style={headerNavigationItemsP}>
                 <a
                   style={headerNavigationItemsP}
-                  href="http://localhost:3000/pokemon/"
+                  href="http://localhost:3000/pokemon"
                 >
                   Home
                 </a>
