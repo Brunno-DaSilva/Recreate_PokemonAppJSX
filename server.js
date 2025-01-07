@@ -20,7 +20,9 @@ app.engine("jsx", require("express-react-views").createEngine());
 //=============================
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Pokemon App!");
+  res.render("Index.jsx", {
+    pokemon: pokemonDB,
+  });
 });
 
 //List of pokemon

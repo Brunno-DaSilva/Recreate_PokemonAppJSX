@@ -132,18 +132,14 @@ class ListOfPokemons extends React.Component {
 
         <div style={bodyContainer}>
           <div style={bodyContainer}>
-            {this.props.pokemon.map((data, index) => (
-              <div style={bodyContainerCard}>
+            {this.props.pokemon.map(({ name, img }) => (
+              <div key={name} style={bodyContainerCard}>
                 <div style={bodyContainerCardH3}>
-                  <h3>{data.name}</h3>
+                  <h3>{name}</h3>
                 </div>
                 <p></p>
                 <div>{indexOfPokemons()}</div>
-                <img
-                  style={bodyContainerCardImg}
-                  src={data.img}
-                  alt={data.name}
-                />
+                <img style={bodyContainerCardImg} src={img} alt={name} />
               </div>
             ))}
           </div>

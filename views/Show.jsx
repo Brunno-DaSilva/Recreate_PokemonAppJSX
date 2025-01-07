@@ -39,54 +39,38 @@ const headerNavigationItemsP = {
 
 const bodyContainer = {
   fontFamily: "Arial",
-  padding: "1.5rem",
   width: "90vw",
   height: "100vh",
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "center",
-  alignItems: "center",
+  padding: "0.5rem",
 };
 
 const bodyContainerCard = {
-  width: "80%",
-  margin: "auto",
-  marginTop: "1rem",
   display: "flex",
-  flexDirection: "row",
-  justifyContent: "space-around",
-  alignItems: "center",
-  borderRadius: "0.5rem",
+  justifyContent: "start",
+  alignItems: "start",
+  flexDirection: "column",
 };
 
 const bodyContainerCardImg = {
-  //   position: "absolute",
-  //   top: "52%",
-  //   left: "55%",
   width: "25rem",
   height: "auto",
+};
+const bodyContainerTitle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 const bodyContainerCardH2 = {
   width: "100%",
-  textAlign: "center",
-  color: "#FBFBFF",
-  marginBottom: "0.5rem",
+  color: "#02022e",
   textTransform: "capitalize",
-};
-
-const bodyContainerCardGhost = {
-  position: "absolute",
-  width: "20rem",
-  height: "20rem",
-  top: "58%",
-  left: "14%",
-  zIndex: "-1",
-  backgroundColor: "#01aAEF",
-  transform: "rotate(45deg)",
-  boxShadow:
-    "0 19px 38px rgba(1, 172, 239,0.30), 0 15px 12px rgba(1, 172, 239,0.22)",
+  fontSize: "2.5rem",
+  fontWeight: "bold",
 };
 
 class PokemonsShow extends React.Component {
@@ -97,7 +81,6 @@ class PokemonsShow extends React.Component {
       <div>
         {/* Header - Starts Here - */}
         <div style={headerContainer}>
-          <div>Show Page</div>
           <div style={headerNavigation}>
             <div style={headerNavigationItems}>
               <p style={headerNavigationItemsP}>
@@ -118,14 +101,14 @@ class PokemonsShow extends React.Component {
               <p style={headerNavigationItemsP}>More </p>
             </div>
           </div>
+          <div>{data.name}</div>
         </div>
 
         {/* Header - Ends Here -*/}
 
         <div style={bodyContainer}>
           <div style={bodyContainerCard}>
-            <div style={bodyContainerCardGhost}></div>
-            <div>
+            <div style={bodyContainerTitle}>
               <h2 style={bodyContainerCardH2}>Hi I am {data.name}</h2>
             </div>
             <img style={bodyContainerCardImg} src={data.img} alt={data.nme} />
